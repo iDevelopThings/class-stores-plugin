@@ -5,17 +5,17 @@
     "build": "rimraf dist && rollup -c rollup.config.js",
     "watch": "rimraf dist && rollup -c rollup.config.js -w"
   },
-  "main": "dist/my-plugin.cjs.js",
-  "module": "dist/my-plugin.esm-bundler.js",
-  "unpkg": "dist/my-plugin.global.js",
-  "jsdelivr": "dist/my-plugin.global.js",
+  "main": "dist/class-stores-plugin.cjs.js",
+  "module": "dist/class-stores-plugin.esm-bundler.js",
+  "unpkg": "dist/class-stores-plugin.global.js",
+  "jsdelivr": "dist/class-stores-plugin.global.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/my-plugin.cjs.js",
-      "browser": "./dist/my-plugin.esm-browser.js",
-      "import": "./dist/my-plugin.esm-bundler.js",
-      "module": "./dist/my-plugin.esm-bundler.js"
+      "require": "./dist/class-stores-plugin.cjs.js",
+      "browser": "./dist/class-stores-plugin.esm-browser.js",
+      "import": "./dist/class-stores-plugin.esm-bundler.js",
+      "module": "./dist/class-stores-plugin.esm-bundler.js"
     },
     "./package.json": "./package.json"
   },
