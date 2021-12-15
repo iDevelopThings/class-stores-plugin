@@ -109,8 +109,6 @@ export function setupDevtools(app: App) {
 function getStores(app) {
 	const appProto = Object.getPrototypeOf(app);
 
-	console.log('appProto', appProto);
-
 	const storeKeys = Object.keys(appProto)
 		.filter(key => key.startsWith("$"))
 		.filter(key => {
@@ -131,11 +129,7 @@ function getStores(app) {
 			return true;
 		});
 
-	console.log('storeKeys', storeKeys);
-
-	const stores = storeKeys.map(key => {
+	return storeKeys.map(key => {
 		return {store : appProto[key], key};
 	});
-
-	return stores;
 }
