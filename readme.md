@@ -26,3 +26,11 @@ const app = new Vue({}).$mount(document.getElementById('app'));
 
 setupDevtools(app);
 ```
+
+## Viewing Class Stores
+In vue devtools, click the dropdown and select "Class Stores"
+
+![vue-dev-tools-access.png](repo/vue-dev-tools-access.png)
+
+Select your class store, and you can now see your state, methods & getters :)
+![img.png](repo/devtools.png)
