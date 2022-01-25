@@ -1,6 +1,6 @@
 {
   "name": "class-stores-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
     "watch": "rimraf dist && rollup -c rollup.config.js -w"
