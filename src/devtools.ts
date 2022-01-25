@@ -6,8 +6,11 @@ import _ from "lodash";
 
 const inspectorId = 'vue-class-stores-plugin';
 
+let definedVueVersion = 3;
 
-export function setupDevtools(app: App) {
+export function setupDevtools(app: App, vueVersion: 2 | 3) {
+	definedVueVersion = vueVersion;
+
 	setupDevtoolsPlugin({
 		id          : 'vue-class-stores-plugin',
 		label       : 'Vue Class Stores',
@@ -65,9 +68,7 @@ export function setupDevtools(app: App) {
 
 
 function getStores(app) {
-	const version = getVueVersion(app);
-
-	return version === 2 ? getVueTwoStores(app) : getVueThreeStores(app);
+	return definedVueVersion === 2 ? getVueTwoStores(app) : getVueThreeStores(app);
 }
 
 function getVueTwoStores(app) {
@@ -171,9 +172,7 @@ function getStoreStates(app, key: string): { [key: string]: StateBase[] } {
 }
 
 function getStoreInsts(app, storeKey: string) {
-	console.log(getVueVersion(app), getVueThreeStoreInsts(app, storeKey));
-
-	return getVueVersion(app) === 2
+	return definedVueVersion === 2
 		? getVueTwoStoreInsts(app, storeKey)
 		: getVueThreeStoreInsts(app, storeKey);
 }
@@ -190,15 +189,4 @@ function getVueTwoStoreInsts(app, storeKey: string) {
 		storeInst : Object.getPrototypeOf(app[storeKey]),
 		store     : Object.getPrototypeOf(app)[storeKey],
 	};
-}
-
-
-function getVueVersion(app) {
-	let vueVersion = app.version;
-
-	if (!vueVersion) {
-		return app?.config?.globalProperties ? 3 : 2;
-	}
-
-	return (vueVersion as string).startsWith('3.') ? 3 : 2;
 }
