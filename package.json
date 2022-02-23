@@ -25,9 +25,6 @@
     "@vue/devtools-api": "^6.0.0-beta.20.1",
     "lodash": "^4.17.21"
   },
-  "peerDependencies": {
-    "vue": "^2.6.14"
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
